@@ -1,10 +1,9 @@
 pipeline {
     agent any
-
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                sh 'mvn clean test -Dfilename="testNG.xml"'
             }
         }
     }
