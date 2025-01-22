@@ -13,7 +13,6 @@ pipeline {
                 sh 'mvn clean test -Dfilename="testNG.xml"'
             }
         }
-    }
         stage('reports') {
             steps {
             script {
@@ -27,4 +26,5 @@ pipeline {
             }
             }
         }
+    }
 }
