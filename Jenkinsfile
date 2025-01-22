@@ -10,7 +10,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn clean test -Dfilename="testNG.xml"'
+                sh 'mvn -o test -Dfilename="testNG.xml"'
             }
         }
     }
