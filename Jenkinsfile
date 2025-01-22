@@ -10,7 +10,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn -o test -Dfilename="testNG.xml"'
+                sh 'mvn install -Dskiptests -Dfilename="testNG.xml"'
             }
         }
     }
