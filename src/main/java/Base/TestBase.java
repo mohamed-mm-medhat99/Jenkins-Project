@@ -18,7 +18,7 @@ public class TestBase {
         options.addArguments("--remote-allow-origins=*");
 //        File extensionFilePath = new File("C:\\Users\\mhefela\\Downloads\\AdBlock-—-block-ads-across-the-web-Chrome-Web-Store.crx");
 //        options.addExtensions(extensionFilePath);
-        return options;
+        return options; //
     }
     public static WebDriver driver;
 
