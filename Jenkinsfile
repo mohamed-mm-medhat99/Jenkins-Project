@@ -13,17 +13,11 @@ pipeline {
                 sh 'mvn clean test -Dfilename="testNG.xml"'
             }
         }
-        stage('reports') {
-            steps {
-            script {
-                    allure([
-                            includeProperties: false,
-                            jdk: '',
-                            properties: [],
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'build/allure-results']]
-                    ])
-            }
+        post {
+            always{
+                allure includeProperties:false,
+                 jdk: '',
+                 results: [[path: 'build/allure-results']]
             }
         }
     }
