@@ -16,6 +16,9 @@ public class TestBase {
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
 //        File extensionFilePath = new File("C:\\Users\\mhefela\\Downloads\\AdBlock-—-block-ads-across-the-web-Chrome-Web-Store.crx");
 //        options.addExtensions(extensionFilePath);
         return options; //
