@@ -1,25 +1,27 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-            agent{
-                docker{
-                    image 'maven'
-                    args '-u root'
-                    reuseNode true
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build("selenium-project")
                 }
             }
+        }
+        stage('Run Tests') {
             steps {
-                sh 'mvn clean test -Dfilename="testNG.xml"'
+                script {
+                    docker.image("selenium-project").run("--rm")
+                }
             }
         }
     }
     post{
-        always{
-            allure includeProperties:
-            false,
-            jdk: '',
-            results: [[path: 'build/allure-results']]
+            always{
+                allure includeProperties:
+                false,
+                jdk: '',
+                results: [[path: 'build/allure-results']]
+            }
         }
-    }
 }
