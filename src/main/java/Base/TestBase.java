@@ -10,6 +10,9 @@ public class TestBase {
     public static ChromeOptions ChromeOption(){
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        options.addArguments("--headless"); // Run in headless mode
+        options.addArguments("--disable-gpu"); // Disable GPU acceleration
+        options.addArguments("--no-sandbox"); // Disable sandbox for Docker environments
 //        options.addArguments("--remote-allow-origins=*");
 //        options.addArguments("--headless");
 //        options.addArguments("--no-sandbox");
