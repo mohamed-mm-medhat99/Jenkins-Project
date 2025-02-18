@@ -21,7 +21,7 @@ pipeline {
                            jdk: '',
                            results: [[path: 'build/allure-results']]
                 }
-                script {
+                always {
                     echo 'Stopping containers...'
                     sh "docker-compose -f docker-compose.yml down"
                 }
