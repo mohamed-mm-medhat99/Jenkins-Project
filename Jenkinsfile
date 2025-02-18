@@ -17,13 +17,11 @@ pipeline {
             }
             post {
                 always {
+                echo 'Stopping containers...'
+                sh "docker-compose -f docker-compose.yml down"
                     allure includeProperties: false,
                            jdk: '',
                            results: [[path: 'build/allure-results']]
-                }
-                always {
-                    echo 'Stopping containers...'
-                    sh "docker-compose -f docker-compose.yml down"
                 }
             }
         }
