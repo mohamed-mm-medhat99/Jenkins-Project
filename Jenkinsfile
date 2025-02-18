@@ -1,18 +1,22 @@
 pipeline {
     agent any
     stages {
-        stage('Build the project') {
-            steps {
-                sh 'mvn clean test -Dfilename="testNG.xml"'
-            }
+        stage('Build') {
+                    agent{
+                        docker{
+                            image 'maven'
+                            args '-u root'
+                            reuseNode true
+                            }
+        steps{
+            sh 'mvn clean test -Dfilename="testNG.xml"'
         }
     }
-    post{
+     post{
             always{
                 allure includeProperties:
                 false,
                 jdk: '',
                 results: [[path: 'build/allure-results']]
-            }
-        }
+                }
 }
