@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build the project') {
             steps {
-                'mvn clean test -Dfilename="testNG.xml"'
+                sh 'mvn clean test -Dfilename="testNG.xml"'
             }
         }
     }
