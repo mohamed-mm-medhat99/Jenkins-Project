@@ -18,5 +18,6 @@ pipeline {
                 false,
                 jdk: '',
                 results: [[path: 'build/allure-results']]
-                }
+            }
+            }
 }
