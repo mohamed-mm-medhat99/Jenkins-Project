@@ -1,26 +1,21 @@
-# Use the official Maven image with OpenJDK 11 as the base image
+# Use the official Eclipse Temurin image with OpenJDK 23
 FROM eclipse-temurin:23
 
 # Install Maven
 RUN apt-get update && apt-get install -y maven
 
-# Update the package list and install necessary tools
-# RUN apt-get update && apt-get install -y \
-#     wget \                # Tool for downloading files
-#     unzip \               # Tool for extracting zip files
-#     google-chrome-stable  # Install the stable version of Google Chrome
-#
-# # Download and install ChromeDriver
-# RUN wget https://chromedriver.storage.googleapis.com/120.0.6099.109/chromedriver_linux64.zip \
-#     && unzip chromedriver_linux64.zip \  # Extract the ChromeDriver zip file
-#     && mv chromedriver /usr/local/bin/chromedriver \  # Move ChromeDriver to a directory in the PATH
-#     && chmod +x /usr/local/bin/chromedriver  # Make ChromeDriver executable
+# Install Chrome and ChromeDriver
+RUN apt-get install -y wget unzip google-chrome-stable
+RUN wget https://chromedriver.storage.googleapis.com/120.0.6099.109/chromedriver_linux64.zip \
+    && unzip chromedriver_linux64.zip \
+    && mv chromedriver /usr/local/bin/chromedriver \
+    && chmod +x /usr/local/bin/chromedriver
 
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the Maven project files into the container
+# Copy the Maven project files
 COPY . .
 
-# Define the default command to run when the container starts
+# Run the tests
 CMD ["mvn", "clean", "test"]

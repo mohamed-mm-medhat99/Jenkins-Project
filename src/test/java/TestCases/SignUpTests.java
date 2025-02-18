@@ -13,7 +13,7 @@ public class SignUpTests extends TestBase {
     public String url = "https://automationexercise.com/";
     @BeforeMethod
     public void beforeMethod(){
-        openBrowser(url);
+        openBrowser(url , false);
         signupPageOBJ = new SignUpPage(driver);
     }
 

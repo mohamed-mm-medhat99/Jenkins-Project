@@ -26,7 +26,7 @@ public class FirstTest extends TestBase {
 
     @BeforeMethod
     public void beforeMethod(){
-        openBrowser("https://www.bing.com");
+        openBrowser("https://www.bing.com" , false);
     }
 
 

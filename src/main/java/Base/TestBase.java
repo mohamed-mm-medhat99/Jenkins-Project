@@ -3,6 +3,14 @@ package Base;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.time.Duration;
 
 public class TestBase {
@@ -24,10 +32,21 @@ public class TestBase {
     public static WebDriver driver;
 
 
-    public void openBrowser(String URL)
+    public void openBrowser(String url , Boolean isRemote)
     {
         driver = new ChromeDriver(ChromeOption());
-        driver.get(URL);
+        String targetUrl = "http://localhost:4444";
+        FirefoxOptions opts = new FirefoxOptions();
+
+        if(isRemote){
+        try {
+            driver = new RemoteWebDriver(new URL(targetUrl) , opts);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+        }
+
+        driver.get(url);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 

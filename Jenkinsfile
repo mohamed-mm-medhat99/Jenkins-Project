@@ -1,18 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Build Docker Image') {
+        stage('Build the project') {
             steps {
-                script {
-                    docker.build("selenium-project")
-                }
-            }
-        }
-        stage('Run Tests') {
-            steps {
-                script {
-                    docker.image("selenium-project").run("--rm")
-                }
+                'mvn clean test -Dfilename="testNG.xml"'
             }
         }
     }
