@@ -1,7 +1,6 @@
-version: "3"
 services:
   chrome:
-    image: selenium/node-chrome:dev
+    image: seleniarm/standalone-chromium
     shm_size: 2gb
     depends_on:
       - selenium-hub
