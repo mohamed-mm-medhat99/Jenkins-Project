@@ -12,7 +12,7 @@ pipeline {
         stage('E2E tests') {
             steps {
                 script {
-                    sh 'mvn clean test -Dfilename="testNG.xml"'
+                    sh 'clean test -Dfilename="testNG.xml"'
                 }
             }
             post {
