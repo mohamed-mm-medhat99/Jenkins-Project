@@ -1,6 +1,4 @@
 services:
-  maven:
-    image: maven
   chrome:
     image: seleniarm/standalone-chromium
     shm_size: 2gb

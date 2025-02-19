@@ -12,7 +12,7 @@ pipeline {
         stage('E2E tests') {
             steps {
                 script {
-                    sh "mvn clean verify"
+                    sh 'mvn clean test -Dfilename="testNG.xml"''
                 }
             }
             post {
