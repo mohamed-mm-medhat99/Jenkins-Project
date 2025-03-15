@@ -1,10 +1,14 @@
 package TestCases;
 
+import Base.GridBase;
 import Base.TestBase;
 import Pages.SignUpPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 
 public class SignUpTests extends TestBase {
 
@@ -13,7 +17,7 @@ public class SignUpTests extends TestBase {
     public String url = "https://automationexercise.com/";
     @BeforeMethod
     public void beforeMethod(){
-        openBrowser(url , false);
+        //openBrowser();
         signupPageOBJ = new SignUpPage(driver);
     }
 
@@ -49,10 +53,10 @@ public class SignUpTests extends TestBase {
 //        System.out.println("current login message is: "+currentLoginMessage);
 //        Assert.assertEquals(currentLoginMessage , "Logged in as Mohamed");
     }
-    @AfterMethod
-    public void afterMethod()
-    {
-        closeBrowser();
-    }
+//    @AfterMethod
+//    public void afterMethod()
+//    {
+//        closeBrowser();
+//    }
 
 }

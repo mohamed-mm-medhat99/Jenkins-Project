@@ -9,6 +9,11 @@
                     <include name="testAssignment1"/>
                 </methods>
             </class>
+            <class name = "TestCases.SignUpTestsTwo" >
+                <methods>
+                    <include name="testAssignment1"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

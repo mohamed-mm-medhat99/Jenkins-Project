@@ -9,8 +9,8 @@ public class thirdTest extends TestBase {
     public SignUpPage signupPageOBJ;
     @BeforeMethod
     public void beforeMethod(){
-        openBrowser("https://www.google.com" , false);
-        signupPageOBJ = new SignUpPage(driver);
+//        openBrowser("https://www.google.com" , false , "firefox");
+//        signupPageOBJ = new SignUpPage(driver);
     }
 
     @Test
