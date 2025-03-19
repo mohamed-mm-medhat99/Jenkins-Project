@@ -12,7 +12,7 @@ public class TestBase {
     @Parameters({"browser"})
     @BeforeMethod
     public void setUp(@Optional("chrome") String browser) throws MalformedURLException, URISyntaxException {
-        //this.browserName = browser;
+        this.browserName = browser;
         driver = DriverFactory.getDriver(browser);
         driver.manage().window().maximize();
         driver.get("https://www.automationexercise.com/");
