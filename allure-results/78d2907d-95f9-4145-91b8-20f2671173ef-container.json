@@ -1,0 +1,1 @@
+{"uuid":"78d2907d-95f9-4145-91b8-20f2671173ef","name":"Base.GridBase.openBrowser","children":["ad2b9fe6-1fbc-43ca-8f39-4e74a8855696"],"description":"","befores":[{"name":"openBrowser","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1740515800442,"stop":1740515806749}],"afters":[],"start":1740515800441,"stop":1740515806749}

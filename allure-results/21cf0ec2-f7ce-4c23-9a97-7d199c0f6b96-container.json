@@ -1,0 +1,1 @@
+{"uuid":"21cf0ec2-f7ce-4c23-9a97-7d199c0f6b96","name":"TestCases.SignUpTests","children":["db509c6d-aebf-4323-b691-379aec16c75a"],"befores":[{"name":"openBrowser","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1740516312243,"stop":1740516318097}],"afters":[],"start":1740516312230,"stop":1740516323576}
