@@ -1,6 +1,6 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name = "Suite1" parallel="tests" thread-count="2">
+<suite name = "Parallel Suite" parallel="tests" thread-count="2">
 
     <test name = "test Chrome session 1">
         <parameter name="browser" value="chrome"/>
@@ -16,7 +16,7 @@
     <test name = "test Chrome session 2">
         <classes>
             <class name = "TestCases.SignUpTests" >
-                <parameter name="browser" value="safari"/>
+                <parameter name="browser" value="edge"/>
                 <methods>
                     <include name="testAssignment1"/>
                 </methods>
