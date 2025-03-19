@@ -3,7 +3,7 @@
 <suite name = "Parallel Suite" parallel="tests" thread-count="2">
 
     <test name = "test Chrome session 1">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="edge"/>
         <classes>
             <class name = "TestCases.SignUpTests" >
                 <methods>
