@@ -15,7 +15,7 @@ public class TestBase {
         this.browserName = browser;
         driver = DriverFactory.getDriver(browser);
         driver.manage().window().maximize();
-        driver.get("https://www.automationexercisetest.com/");
+        driver.get("https://www.automationexercise.com/");
     }
 
     @AfterMethod
