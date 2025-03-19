@@ -54,7 +54,7 @@
                 <version>3.2.5</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <suiteXmlFiles>testNG.xml</suiteXmlFiles>
+                    <suiteXmlFiles>${filename}</suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
