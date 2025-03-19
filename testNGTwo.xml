@@ -16,7 +16,7 @@
     <test name = "test Chrome session 2">
         <classes>
             <class name = "TestCases.SignUpTests" >
-                <parameter name="browser" value="chrome"/>
+                <parameter name="browser" value="safari"/>
                 <methods>
                     <include name="testAssignment1"/>
                 </methods>
