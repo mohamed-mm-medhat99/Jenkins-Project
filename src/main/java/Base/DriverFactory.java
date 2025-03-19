@@ -28,6 +28,7 @@ public class DriverFactory {
         }
     }
 
+
     public static WebDriver getDriver(String browser) throws MalformedURLException, URISyntaxException {
         String executionMode = properties.getProperty("ExecutionMode");
 
@@ -55,7 +56,7 @@ public class DriverFactory {
     public static WebDriver createLocalDriver(String browser){
         switch (browser.toLowerCase()) {
             case "chrome":
-                return new ChromeDriver();
+                return new ChromeDriver(ChromeOption());
             case "safari":
                 return new SafariDriver();
             default:
